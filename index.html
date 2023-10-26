@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link href="style/style.css" rel="stylesheet" type="text/css" />
+
+  <script src="https://kit.fontawesome.com/6b2f05754f.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
+  <title>Les Petits Plats</title>
+</head>
+
+<body>
+
+  <section class="header-banner">
+    <header>
+      <div class="row">
+        <div class="col navbar">
+          <a class="mx-auto my-3" href="index.html">
+            <img class="logo" src="assets/lespetitsplats.png" alt="Les Petits Plats Logo" />
+          </a>
+        </div>
+      </div>
+
+      <div class="search-bar">
+        <div class="search-input-container">
+          <div class="input-container">
+            <input id="search" type="text" class="search-input form-control  recipe-input"
+              placeholder="Rechercher une recette, un ingrédient...">
+            <span class=" fa fa-search filter-search-input search-input-icon"></span>
+            <button type="submit">Search</button>
+          </div>
+        </div>
+
+      </div>
+    </header>
+  </section>
+  <main>
+    <section class="filter-wrapper">
+
+      <div class="dropdown-btn-container mx-4 my-3">
+
+        <div class="ingredient-filter-container  mx-2">
+
+          <button type="button" class="btn btn-primary ingredient-btn normal">
+            Ingrédients
+            <span class="fa fa-chevron-down" aria-hidden="true"></span>
+          </button>
+
+          <div class="search">
+            <input class="filter-search-input ingredient-input form-control recipe-input" name=" recipe-input"
+              placeholder="Rechercher un ingrédient" type="text" />
+            <span class="fa fa-chevron-up" aria-hidden="true"></span>
+          </div>
+          <div class="filter-list">
+
+          </div>
+
+
+        </div>
+        <div class="appareil-filter-container  mx-2">
+
+          <button type="button" class="btn btn-green appareil-btn normal">
+            Appareils
+            <span class="fa fa-chevron-down" aria-hidden="true"></span>
+          </button>
+
+          <div class="search">
+            <input class="filter-search-input appareil-input form-control" placeholder="Rechercher un appareil"
+              type="text" />
+            <span class="fa fa-chevron-up" aria-hidden="true"></span>
+          </div>
+          <div class="filter-list">
+
+          </div>
+
+
+        </div>
+        <div class="ustensil-filter-container mx-2">
+          <button type="button" class="btn btn-orange ustensil-btn normal">
+            Ustensiles<span class="fa fa-chevron-down" aria-hidden="true"></span>
+          </button>
+          <div class="search">
+            <input class="filter-search-input ustensil-input form-control" placeholder="Rechercher un ustensile"
+              type="text" />
+            <span class="fa fa-chevron-up" aria-hidden="true"></span>
+          </div>
+          <div class="filter-list">
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <div class="tag-container"></div>
+
+    <div class="recipe-container d-flex flex-wrap"></div>
+  </main>
+  <footer>
+    <a href="#" class="back-to-top">Back to Top</a>
+  </footer>
+
+  <script type="module" src="/scripts/components/filter.js"></script>
+  <script type="module" src="scripts/pages/index.js"></script>
+</body>
+
+</html>
