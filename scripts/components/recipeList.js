@@ -65,11 +65,16 @@ export default class recipesList {
 
     /* gère l'input de la barre de recherche et lance le tri à chaque input dans la barre */
     searchWithInput(inputValue) {
-        if (!inputValue.length) {
+        if (inputValue.length == 0) {
             this.filteredRecipes = this.allRecipes;
             this.searchedInput = "";
             this.searchRecipes(this.allRecipes);
+            return
         }
+        else if (inputValue.length < 3) {
+            this.showEmptyListContainer("Votre mot recherché doit être plus longue que 3 mots"); 
+            return
+        }  
         this.searchedInput = inputValue.toLowerCase();
         this.searchRecipes(this.allRecipes);
     }
