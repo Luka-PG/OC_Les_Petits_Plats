@@ -85,7 +85,7 @@ export default class recipesList {
     /* cherche le(s) mot(s) clé(s) dans la liste des recettes  */
     searchRecipes(list) {
 
-        let res = this.searchUsingFilter(list);
+        let res = this.searchUsingIteration(list);
         if (res.length > 0) {
             this.filteredRecipes = res;
             this.applyRecipesFilter();
@@ -97,17 +97,30 @@ export default class recipesList {
             this.displayRecipeNumber()
         }
     }
-    /* cherche avec le(s) mot(s) recherché(s) la liste des recettes selon les noms, descriptions et ingrédients  */
-    /* cherche la recette selon le nom, la description, ou les ingredients avec le(s) mot(s) recherché(s)*/
-    searchUsingFilter(list) {
-        return list.filter(recipe => {
-            if ((recipe.name.toLowerCase().includes(this.searchedInput)) ||
-                (recipe.description.toLowerCase().includes(this.searchedInput)) ||
-                (recipe.ingredients.forEach(ing =>
-                    ing.ingredient.toLowerCase().includes(this.searchedInput)))) return true;
-        });
+
+
+    searchUsingIteration(list) {
+        let res = [];
+        for (let i = 0; i < list.length; i++) {
+            if ((list[i].name.toLowerCase().includes(this.searchedInput)) ||
+                (list[i].description.toLowerCase().includes(this.searchedInput))) {
+                if (!res.includes(list[i])) {
+                    res.push(list[i]);
+                    continue;
+                }
+            }
+            for (let j = 0; j < list[i].ingredients.length; j++) {
+                if (list[i].ingredients[j].ingredient.toLowerCase().includes(this.searchedInput)) {
+                    if (!res.includes(list[i])) {
+                        res.push(list[i]);
+                        continue;
+                    }
+                }
+            }
+        }
+        return res;
     }
-    
+
     displayRecipeNumber() {
         let recipeCount = this.filteredRecipes.length
 
