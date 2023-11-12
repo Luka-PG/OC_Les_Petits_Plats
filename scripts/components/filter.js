@@ -40,7 +40,7 @@ export default class filter {
   /*gère l'affichage de la fermeture du menu filtre*/
   closeFilterButton() {
 
-    this.filterContainer.querySelector(".btn").style.display ="inline-block";
+    this.filterContainer.querySelector(".normal").style.display ="inline-block";
     this.filterContainer.querySelector(".search").style.display = "none";
     this.filterContainer.querySelector(".filter-list").style.display = "none";
 
@@ -49,8 +49,8 @@ export default class filter {
   /* écoute les intéractions avec le bouton filtre*/
   listenFilterButton() {
 
-    this.filterContainer.querySelector(".btn").addEventListener("click", () => {
-        this.filterContainer.querySelector(".btn").style.display = "none";
+    this.filterContainer.querySelector(".normal").addEventListener("click", () => {
+        this.filterContainer.querySelector(".normal").style.display = "none";
         this.filterContainer.querySelector(".search").style.display = "flex";
         this.displayArrayFilter();
         this.searchInFilters();
@@ -88,7 +88,7 @@ export default class filter {
     this.chosenFilterArray.forEach((elt) => {
 
       let chosenFilterButton = document.createElement("button");
-      chosenFilterButton.className += `chosen-filter-btn chosen-${this.name}`;
+      chosenFilterButton.className += `chosen-tag-btn chosen-${this.name}`;
       chosenFilterButton.setAttribute("value", elt);
 
       let chosenButtonTxt = document.createElement("div");

@@ -8,6 +8,7 @@ export default class recipesList {
         this.filteredRecipes = recipes;
         this.filterList = []; /* liste des filtres */
         this.applyRecipesFilter();
+        this.displayRecipeNumber()
         this.searchedInput = ""; /*mot recherché dans la barre de recherche des recettes*/
     }
 
@@ -30,6 +31,7 @@ export default class recipesList {
     /* ferme les menu des filtres*/ 
     closeAllFilters() {
         this.filterList.forEach(filter => filter.closeFilterButton());
+        this.displayRecipeNumber()
     }
 
     /* affiche la liste des résultats de la recherche*/
@@ -69,14 +71,15 @@ export default class recipesList {
             this.filteredRecipes = this.allRecipes;
             this.searchedInput = "";
             this.searchRecipes(this.allRecipes);
+            this.displayRecipeNumber()
             return
         }
         else if (inputValue.length < 3) {
-            this.showEmptyListContainer("Votre mot recherché doit être plus longue que 3 mots"); 
             return
         }  
         this.searchedInput = inputValue.toLowerCase();
         this.searchRecipes(this.allRecipes);
+        this.displayRecipeNumber()
     }
 
     /* cherche le(s) mot(s) clé(s) dans la liste des recettes  */
@@ -86,10 +89,12 @@ export default class recipesList {
         if (res.length > 0) {
             this.filteredRecipes = res;
             this.applyRecipesFilter();
+            this.displayRecipeNumber()
         }
         else {
-            this.filteredRecipes = this.allRecipes;
             this.showEmptyListContainer("Aucune recette ne correspond à votre recherche!");
+            this.filteredRecipes = []
+            this.displayRecipeNumber()
         }
     }
 
@@ -114,5 +119,13 @@ export default class recipesList {
             }
         }
         return res;
+    }
+
+    displayRecipeNumber() {
+        let recipeCount = this.filteredRecipes.length
+
+        let recipeNumber = document.querySelector("p");
+        recipeNumber.textContent = `${recipeCount} recettes correspondantes` 
+        
     }
 }

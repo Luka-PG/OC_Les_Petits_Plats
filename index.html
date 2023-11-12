@@ -16,9 +16,8 @@
 </head>
 
 <body>
-
-  <section class="header-banner">
-    <header>
+  <header>
+    <section class="header-banner">
       <div class="row">
         <div class="col navbar">
           <a class="mx-auto my-3" href="index.html">
@@ -26,7 +25,6 @@
           </a>
         </div>
       </div>
-
       <div class="search-bar">
         <div class="search-input-container">
           <div class="input-container">
@@ -36,18 +34,17 @@
             <button type="submit">Search</button>
           </div>
         </div>
-
       </div>
-    </header>
-  </section>
+    </section>
+  </header>
   <main>
     <section class="filter-wrapper">
 
       <div class="dropdown-btn-container mx-4 my-3">
 
-        <div class="ingredient-filter-container  mx-2">
+        <div class="ingredient-filter-container filter-container filter-btn  mx-2">
 
-          <button type="button" class="btn btn-primary ingredient-btn normal">
+          <button type="button" class="btn-filter ingredient-btn normal">
             Ingrédients
             <span class="fa fa-chevron-down" aria-hidden="true"></span>
           </button>
@@ -63,9 +60,9 @@
 
 
         </div>
-        <div class="appareil-filter-container  mx-2">
+        <div class="appareil-filter-container filter-container filter-btn  mx-2">
 
-          <button type="button" class="btn btn-green appareil-btn normal">
+          <button type="button" class="btn-filter appareil-btn normal">
             Appareils
             <span class="fa fa-chevron-down" aria-hidden="true"></span>
           </button>
@@ -81,8 +78,8 @@
 
 
         </div>
-        <div class="ustensil-filter-container mx-2">
-          <button type="button" class="btn btn-orange ustensil-btn normal">
+        <div class="ustensil-filter-container filter-container filter-btn  mx-2">
+          <button type="button" class="btn-filter ustensil-btn normal">
             Ustensiles<span class="fa fa-chevron-down" aria-hidden="true"></span>
           </button>
           <div class="search">
@@ -94,8 +91,10 @@
 
           </div>
         </div>
+        
+      
       </div>
-
+      <div class="recipe-number"> <p></p> </div>
     </section>
 
     <div class="tag-container"></div>
