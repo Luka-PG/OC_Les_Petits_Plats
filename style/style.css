@@ -19,6 +19,7 @@
   display: none;
   gap: 10px;
   align-items: center;
+  padding: 0 !important;
 }
 
 .search-input {
@@ -126,12 +127,14 @@
 
 .filter-list a{
   color: black;
+  transition: 0.2s;
 }
 
 .filter-list a:hover{
   color: black;
   font-size: large;
   font-weight: bold;
+  transition: 0.2s;
 }
 
 .filter-item-anchor {
@@ -191,8 +194,8 @@
 .fa-chevron-up {
   cursor: pointer;
   font-size: x-large;
-  padding: 0;
-  margin: 0;
+  padding: 15px;
+  margin: 10px 0 0 0;
 }
 
 button span {
@@ -381,23 +384,26 @@ footer{
   display: flex;
   justify-content: space-around;
   align-items: center;
+  color: black;
 }
 
 footer a{ 
-  text-decoration: none;
-  background-color: black;
-  color: white;
-  padding: 5px;
-  border-radius: 8px;
-  border: 2px solid grey;
+  color: black;
 }
 
-footer a:hover{
-  color: lightgrey;
-  text-decoration: none;
+footer a p {
+  font-family: "Roboto", sans-serif !important;
+  font-weight: normal;
+  display: contents;
 }
 
 /* miscellaneous */
+
+label {
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
 
 .no-result{
   border-bottom: 1px solid;

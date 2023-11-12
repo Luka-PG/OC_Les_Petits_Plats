@@ -7,9 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link href="style/style.css" rel="stylesheet" type="text/css" />
-
   <script src="https://kit.fontawesome.com/6b2f05754f.js" crossorigin="anonymous"></script>
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous" />
   <title>Les Petits Plats</title>
@@ -28,10 +26,9 @@
       <div class="search-bar">
         <div class="search-input-container">
           <div class="input-container">
-            <label>
-              <input id="search" type="text" class="search-input form-control  recipe-input"
-                placeholder="Rechercher une recette, un ingrédient...">
-            </label>
+            <label for="search-bar">Recherchez une recette, un ingrédient etc... </label>
+              <input id="search-bar" type="text" class="search-input form-control recipe-input" placeholder="Recherchez une recette, un ingrédient etc...">
+          
             <span class=" fa fa-search filter-search-input search-input-icon"></span>
             <button type="submit">Search</button>
           </div>
@@ -52,10 +49,10 @@
           </button>
 
           <div class="search">
-            <label>
-              <input class="filter-search-input ingredient-input form-control recipe-input" name=" recipe-input"
-                placeholder="Rechercher un ingrédient" type="text" />
-            </label>
+            <label for="ingrédient"> recherchez un ingrédient : </label>
+              <input id="ingrédient" class="filter-search-input ingredient-input form-control recipe-input" name=" recipe-input" placeholder="recherchez un ingrédient..."
+                type="text" />
+            
             <span class="fa fa-chevron-up" aria-hidden="true"></span>
           </div>
           <div class="filter-list">
@@ -65,21 +62,17 @@
 
         </div>
         <div class="appareil-filter-container filter-container filter-btn  mx-2">
-
           <button type="button" class="btn-filter appareil-btn normal">
             Appareils
             <span class="fa fa-chevron-down" aria-hidden="true"></span>
           </button>
-
           <div class="search">
-            <label>
-              <input class="filter-search-input appareil-input form-control" placeholder="Rechercher un appareil"
-                type="text" />
-            </label>
+            <label for="appareil">recherchez un appareil : </label>
+              <input id="appareil" class="filter-search-input appareil-input form-control" placeholder="recherchez un appareil..." type="text" />
+           
             <span class="fa fa-chevron-up" aria-hidden="true"></span>
           </div>
           <div class="filter-list">
-
           </div>
 
 
@@ -89,10 +82,9 @@
             Ustensiles<span class="fa fa-chevron-down" aria-hidden="true"></span>
           </button>
           <div class="search">
-            <label>
-              <input class="filter-search-input ustensil-input form-control" placeholder="Rechercher un ustensile"
-                type="text" />
-            </label>
+            <label for="ustensil"> recherchez un ustensil : </label>
+              <input id="ustensil" class="filter-search-input ustensil-input form-control" placeholder="recherchez un ustensil" type="text" />
+         
             <span class="fa fa-chevron-up" aria-hidden="true"></span>
           </div>
           <div class="filter-list">
@@ -112,7 +104,9 @@
     <div class="recipe-container d-flex flex-wrap"></div>
   </main>
   <footer>
-    <a href="#" class="back-to-top">Back to Top</a>
+    <a href="#" class="back-to-top"> <span alt="back to top" class="fa fa-chevron-up" />
+      <p>back-to-top</p>
+    </a>
   </footer>
 
   <script type="module" src="scripts/components/filter.js"></script>
