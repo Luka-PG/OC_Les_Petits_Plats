@@ -129,7 +129,9 @@
 }
 
 .filter-list a:hover{
+  color: black;
   font-size: large;
+  font-weight: bold;
 }
 
 .filter-item-anchor {
