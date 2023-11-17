@@ -68,7 +68,7 @@ export default class recipe {
             const li = document.createElement('li');
                 li.className += "li-ingredients"
 
-            if(!!elt.quantity){
+            if(elt.quantity){
 
                 const name = document.createElement('p');
                     name.textContent = elt.ingredient + ": ";
@@ -79,7 +79,7 @@ export default class recipe {
                     divIngredients.className += "div-Quantity-Ingredients"
                     li.appendChild(divIngredients)
 
-                if (!!elt.unit) {
+                if (elt.unit) {
                     const amount = document.createElement('p');
                         amount.textContent = elt.quantity + " " + elt.unit;
                         amount.className += "quantity p-quantity"

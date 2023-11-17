@@ -67,10 +67,12 @@
   position: absolute;
   right: 1rem;
   border: none;
+  transition: 0.2s;
 }
 
 .input-container button:hover{
   background: #ffd15b url("../assets/search_icon_black.svg") no-repeat center;
+  transition: 0.2s;
 }
 
 .search-bar{
