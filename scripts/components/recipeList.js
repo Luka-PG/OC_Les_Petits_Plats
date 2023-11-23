@@ -111,8 +111,8 @@ export default class recipesList {
     displayRecipeNumber() {
         let recipeCount = this.filteredRecipes.length
 
-        let recipeNumber = document.querySelector("p");
-        recipeNumber.textContent = `${recipeCount} recettes correspondantes` 
+        let recipeNumber = document.querySelector(".recipe-number");
+        recipeNumber.textContent = `${recipeCount} recettes` 
         
     }
 }
