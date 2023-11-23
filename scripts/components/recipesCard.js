@@ -43,9 +43,6 @@ export default class recipe {
         const cardTime = document.createElement('div');
             cardTime.className += "card-time-container"
 
-        const cardTimeIcon = document.createElement('span');
-            cardTimeIcon.className += "fa fa-clock-o";
-
         const cardTimeText = document.createElement('div');
             cardTimeText.textContent = `${this.time} min`
             cardTimeText.className += "card-time";
@@ -55,7 +52,7 @@ export default class recipe {
 
         const ingredientTitle = document.createElement("h6")
             ingredientTitle.className += "ingredient-title"
-            ingredientTitle.textContent = "Ingredients :"
+            ingredientTitle.textContent = "INGRÉDIENTS"
 
         const ingredients = document.createElement('div')
             ingredients.className += "div-ingredients"
@@ -112,25 +109,38 @@ export default class recipe {
             ingredientList.appendChild(li)
         })
 
+        const descTitle = document.createElement('h6')
+        descTitle.classList+= "description-title"
+        descTitle.textContent = "RECETTE"
+
         const desc = document.createElement('p');
             desc.className += "description"
             desc.textContent = this.description;
 
         ingredients.appendChild(ingredientList);
         article.appendChild(anchor);
+
+        anchor.appendChild(cardTime);
+        cardTime.appendChild(cardTimeText);
+
             anchor.appendChild(divImg);
+
+            divImg.appendChild(img);
+
             anchor.appendChild(divInfo);
-                divImg.appendChild(img)
+            
+            
+
+               
         divInfo.appendChild(cardHeader);
         divInfo.appendChild(cardInfoContent);
             cardHeader.appendChild(cardTitle);
-            cardHeader.appendChild(cardTime);
-                cardTime.appendChild(cardTimeIcon);
-                cardTime.appendChild(cardTimeText);
-
+            
+        cardInfoContent.appendChild(descTitle);
+        cardInfoContent.appendChild(desc);
         cardInfoContent.appendChild(ingredientTitle)
         cardInfoContent.appendChild(ingredients);
-        cardInfoContent.appendChild(desc);
+     
 
         return (article);
     }

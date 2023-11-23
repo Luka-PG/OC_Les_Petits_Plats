@@ -2,7 +2,7 @@
 
 .logo {
   width: 250px;
-  border-bottom: solid 1px red;
+  margin: 50px !important;
   margin-top: 10px;
 }
 
@@ -12,7 +12,16 @@
    padding-bottom: 200px;
    background-size: cover;
    margin-bottom: 30px ;
-   border-bottom: solid 2px black;
+}
+
+.header-title{
+  color: #FFD15B;
+margin-top: 70px !important;
+  font-family: 'Anton', sans-serif !important;
+  width: 890px;
+  height: 132px;
+  margin: auto;
+  text-align: center;
 }
 
 .search {
@@ -35,7 +44,7 @@
 
 .input-container input{
   height: 4.5rem;
-  width: 59.6rem;
+  width: 59.6rem !important;
   border-radius: 11px;
   text-indent: 1.8rem;
   font-size: 1rem;
@@ -80,13 +89,9 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto !important;
-  padding: 15px 0 15px 0;
   margin-bottom:25px !important;
-  border: 1px solid black ;
   border-radius: 10px;
-  background-color: lightgray;
   width: 45%;
-  margin-top: 100px !important;
 }
 
 .search-input:focus {
@@ -116,11 +121,6 @@
   justify-content: space-between;
 }
 
-.filter-list,
-.search {
-  padding: 15px 25px;
-}
-
 .filter-list {
   max-height: 350px;
   overflow: auto;
@@ -142,7 +142,11 @@
 .filter-item-anchor {
   color: white;
   text-decoration: none;
-  margin-right: 1rem;
+  padding: 15px;
+}
+
+.filter-item-anchor:hover{
+  background-color: #FFD15B;
 }
 
 .tag-container {
@@ -162,9 +166,15 @@
   border-radius: 5px;
   padding: 20px;
   z-index: 1 !important;
-  background: #FFD000;
+  background: #FFD15B;
   z-index: 100;
   border:none;
+  transition: 0.2s;
+}
+
+.chosen-tag-btn:hover{
+  font-weight: bold;
+  transition: 0.2s;
 }
 
 .btn-filter{
@@ -197,7 +207,7 @@
   cursor: pointer;
   font-size: x-large;
   padding: 15px;
-  margin: 10px 0 0 0;
+  margin-right:15px ;
 }
 
 button span {
@@ -216,11 +226,11 @@ button span {
 .recipe-number{
   align-self: center;
   padding: 20px 23px;
-  background-color: white;
   border-radius: 5px;
   font-weight: bold;
-  font-size: large;
+  font-size: x-large;
   margin-right: 30px;
+  font-family: 'Anton', sans-serif !important;
 }
 
 .recipe-number p{
@@ -236,7 +246,7 @@ main {
 body{
   padding: 0;
   margin: 0 !important;
-  background-color: rgb(224, 223, 223) !important;
+  background-color: lightgrey !important;
 
 }
 .content-container {
@@ -259,26 +269,19 @@ body{
   color: #000000 !important;
 }
 
-.card-img {
-  background: #C7BEBE;
-  height: 178px;
-  z-index: 3;
-}
-
 .recipe-card{
+  position: relative;
   width: 25%;
-  border-radius: 5px;
+  border-radius: 15px;
   overflow: hidden;
   transition: 0.5s;
-  -webkit-box-shadow: 0px 9px 8px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 0px 9px 8px 0px rgba(0,0,0,0.75);
-  box-shadow: 0px 9px 8px 0px rgba(0,0,0,0.75);
+  background-color: white;
 }
 
-.recipe-card:hover{
-  -webkit-box-shadow: 0px 9px 18px 0px rgba(0,0,0,0.46);
-  -moz-box-shadow: 0px 9px 18px 0px rgba(0,0,0,0.46);
-  box-shadow: 0px 9px 18px 0px rgba(0,0,0,0.46);
+.recipe-card h6 {
+  font-size: small;
+  font-weight: 100;
+  padding-bottom: 12px;
 }
 
 .div-ingredients{
@@ -289,24 +292,29 @@ body{
   display: flex;
   justify-content: space-between;
   margin: 20px;
-  padding-bottom: 20px !important;
-  border-bottom: 1px dotted black !important;
+  padding-bottom: 15px !important;
 }
 
 .card-infoContent {
   display: flex;
   flex-direction: column;
-  margin: 20px;
+  margin: 10px 20px 20px 20px;
   justify-content: space-between;
 }
+
 .card-infoContent ul {
   margin: 0 !important;
   padding: 0 !important;
 }
+
 .card-infoContent .description,
 .card-infoContent .ingredient-list {
   width: 45%;
   list-style-type: none;
+}
+
+.ingredient-title{
+  padding-top: 15px;
 }
 
 .div-ingredients ul{
@@ -318,50 +326,57 @@ body{
 }
 
 .card-title {
+  font-family: "anton", sans-serif;
   font-size: 18px;
   line-height: 22px;
   font-weight: 400;
   max-width: 72%;
+  margin-top: 15px;
 }
 
 .description {
-  padding-top:15px ;
-  border-top: 1px dotted black;
   font-family: "Roboto", sans-serif;
   font-size: smaller;
   line-height: 100%;
   font-weight: 400;
   width: 100% !important;
-  margin-bottom: 0;
+  margin-bottom: 12px;
 }
 
 .card-ingredient-name {
-  font-weight: 700;
+  font-weight: 600;
   padding: 0;
   margin: 0;
 }
 
 .card-time-container {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  position: absolute;
+  background-color: #FFD15B;
+  border-radius: 20px;
+  right: 0;
+  margin: 20px;
 }
 
 .card-time {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 400;
+  padding: 5px 10px 5px 10px ;
 }
 
 .card-img img{
-  width: 561px;
-  height: 190px;
+  width: -webkit-fill-available;
+  height: 200px;
   object-fit: cover;
-  border-bottom: solid 1px black;
 }
 
 .quantity{
   padding:0;
   margin: 0;
+  color: grey;
+}
+
+.li-ingredients{
+  padding-bottom: 10px;
 }
 
 .ingredient-list li {
